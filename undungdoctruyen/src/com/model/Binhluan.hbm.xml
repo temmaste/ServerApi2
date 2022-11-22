@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2022 8:50:29 PM by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.model.Binhluan" table="binhluan" catalog="apptruyen" optimistic-lock="version">
+        <id name="mabinhluan" type="java.lang.Integer">
+            <column name="mabinhluan" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="nguoidung" class="com.model.Nguoidung" lazy="false" fetch="select">
+            <column name="manguoidung" not-null="true" />
+        </many-to-one>
+        <many-to-one name="truyen" class="com.model.Truyen" lazy="false" fetch="select">
+            <column name="matruyen" not-null="true" />
+        </many-to-one>
+        <property name="message" type="string">
+            <column name="message" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

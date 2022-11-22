@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2022 8:50:29 PM by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.model.Theloai" table="theloai" catalog="apptruyen" optimistic-lock="version">
+        <id name="matheloai" type="java.lang.Integer">
+            <column name="matheloai" />
+            <generator class="identity" />
+        </id>
+        <property name="tentheloai" type="string">
+            <column name="tentheloai" length="50" not-null="true" />
+        </property>
+        <set name="truyens" table="truyen_theloai" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="matheloai" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.model.Truyen">
+                <column name="matruyen" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

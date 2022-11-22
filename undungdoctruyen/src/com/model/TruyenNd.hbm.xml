@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2022 8:50:29 PM by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.model.TruyenNd" table="truyen_nd" catalog="apptruyen" optimistic-lock="version">
+        <composite-id name="id" class="com.model.TruyenNdId">
+            <key-property name="matruyen" type="int">
+                <column name="matruyen" />
+            </key-property>
+            <key-property name="mand" type="int">
+                <column name="mand" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="nguoidung" class="com.model.Nguoidung" update="false" lazy="false" insert="false" fetch="select">
+            <column name="mand" not-null="true" />
+        </many-to-one>
+        <many-to-one name="truyen" class="com.model.Truyen" update="false" lazy="false" insert="false" fetch="select">
+            <column name="matruyen" not-null="true" />
+        </many-to-one>
+        <property name="ngayxem" type="date">
+            <column name="ngayxem" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

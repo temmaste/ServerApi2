@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2022 8:50:29 PM by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.model.Nguoidung" table="nguoidung" catalog="apptruyen" optimistic-lock="version">
+        <id name="manguoidung" type="java.lang.Integer">
+            <column name="manguoidung" />
+            <generator class="identity" />
+        </id>
+        <property name="tennguoidung" type="string">
+            <column name="tennguoidung" length="50" not-null="true" />
+        </property>
+        <property name="hinhdaidien" type="string">
+            <column name="hinhdaidien" length="65535" />
+        </property>
+        <property name="matkhau" type="string">
+            <column name="matkhau" length="50" not-null="true" />
+        </property>
+        <property name="tentaikhoan" type="string">
+            <column name="tentaikhoan" length="50" not-null="true" unique="true" />
+        </property>
+        <set name="binhluans" table="binhluan" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="manguoidung" not-null="true" />
+            </key>
+            <one-to-many class="com.model.Binhluan" />
+        </set>
+        <set name="truyenNds" table="truyen_nd" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="mand" not-null="true" />
+            </key>
+            <one-to-many class="com.model.TruyenNd" />
+        </set>
+    </class>
+</hibernate-mapping>

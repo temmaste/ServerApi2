@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2022 8:50:29 PM by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.model.Tap" table="tap" catalog="apptruyen" optimistic-lock="version">
+        <id name="matap" type="java.lang.Integer">
+            <column name="matap" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="truyen" class="com.model.Truyen" lazy="false" fetch="select">
+            <column name="matruyen" not-null="true" />
+        </many-to-one>
+        <property name="tentap" type="string">
+            <column name="tentap" length="100" not-null="true" />
+        </property>
+        <set name="chuongs" table="chuong" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="matap" not-null="true" />
+            </key>
+            <one-to-many class="com.model.Chuong" />
+        </set>
+    </class>
+</hibernate-mapping>

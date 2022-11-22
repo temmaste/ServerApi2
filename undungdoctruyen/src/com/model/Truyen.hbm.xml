@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2022 8:50:29 PM by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.model.Truyen" table="truyen" catalog="apptruyen" optimistic-lock="version">
+        <id name="matruyen" type="java.lang.Integer">
+            <column name="matruyen" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tacgia" class="com.model.Tacgia" lazy="false" fetch="select">
+            <column name="matacgia" not-null="true" />
+        </many-to-one>
+        <property name="tentruyen" type="string">
+            <column name="tentruyen" length="100" not-null="true" />
+        </property>
+        <property name="mota" type="string">
+            <column name="mota" length="65535" not-null="true" />
+        </property>
+        <property name="ngaydang" type="date">
+            <column name="ngaydang" length="10" not-null="true" />
+        </property>
+        <property name="hinh" type="string">
+            <column name="hinh" length="65535" />
+        </property>
+        <set name="truyenNds" table="truyen_nd" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="matruyen" not-null="true" />
+            </key>
+            <one-to-many class="com.model.TruyenNd" />
+        </set>
+        <set name="binhluans" table="binhluan" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="matruyen" not-null="true" />
+            </key>
+            <one-to-many class="com.model.Binhluan" />
+        </set>
+        <set name="taps" table="tap" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="matruyen" not-null="true" />
+            </key>
+            <one-to-many class="com.model.Tap" />
+        </set>
+        <set name="theloais" table="truyen_theloai" inverse="false" lazy="false" fetch="select">
+            <key>
+                <column name="matruyen" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.model.Theloai">
+                <column name="matheloai" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
