@@ -6,14 +6,17 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.model.Chuong;
+import com.model.Tacgia;
+import com.model.Tap;
 import com.util.SessionUtil;
 
 public class chuongDao {
 	public chuongDao() {};
-	public List<Chuong> getAll(){
+	public List<Tacgia> getAll(){
 		Session ses = SessionUtil.createFac().openSession();
-		Query query=ses.createQuery("From Chuong");
-		List<Chuong> dsChuong = query.list();
+		//Query query=ses.createQuery("From Chuong c where c.tap.matap=2");
+		Query query=ses.createQuery("From Tacgia");
+		List<Tacgia> dsChuong= query.list();
 		ses.close();
 		return dsChuong;
 	}

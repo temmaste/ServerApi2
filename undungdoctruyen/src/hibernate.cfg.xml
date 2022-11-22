@@ -3,7 +3,7 @@
 "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory >
+    <session-factory>
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/apptruyen</property>
@@ -11,13 +11,13 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.search.autoregister_listeners">true</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
-        <mapping class="com.model.Binhluan" />
-        <mapping class="com.model.Tacgia" />
-        <mapping class="com.model.Truyen" />
-        <mapping class="com.model.Nguoidung" />
-        <mapping class="com.model.Tap" />
-        <mapping class="com.model.Theloai" />
-        <mapping class="com.model.TruyenNd" />
-        <mapping class="com.model.Chuong" />
+        <mapping resource="com/model/Binhluan.hbm.xml" />
+        <mapping resource="com/model/Tacgia.hbm.xml" />
+        <mapping resource="com/model/Truyen.hbm.xml" />
+        <mapping resource="com/model/Nguoidung.hbm.xml" />
+        <mapping resource="com/model/Tap.hbm.xml" />
+        <mapping resource="com/model/Theloai.hbm.xml" />
+        <mapping resource="com/model/TruyenNd.hbm.xml" />
+        <mapping resource="com/model/Chuong.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

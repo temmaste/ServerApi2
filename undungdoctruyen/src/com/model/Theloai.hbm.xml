@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 22, 2022 8:50:29 PM by Hibernate Tools 4.3.5.Final -->
+<!-- Generated Nov 23, 2022 12:51:45 AM by Hibernate Tools 4.3.5.Final -->
 <hibernate-mapping>
     <class name="com.model.Theloai" table="theloai" catalog="apptruyen" optimistic-lock="version">
         <id name="matheloai" type="java.lang.Integer">
