@@ -28,6 +28,8 @@ public class nguoidungService {
 		return false;
 	}
 	
+	//dg dẫn là http://localhost:8080/undungdoctruyen/rest/nguoidung/dangki?name=thinhho&username=thinhsuper&password=kakalok0019
+	//bên android code theo đúng đường dẫn
 	@POST
 	@Path("/dangki")
 	@Produces({ MediaType.APPLICATION_JSON})
