@@ -14,7 +14,7 @@ import org.codehaus.jackson.annotate.JsonManagedReference;
 public class Truyen implements java.io.Serializable {
 
 	private Integer matruyen;
-	@JsonBackReference
+	@JsonManagedReference
 	private Tacgia tacgia;
 	private String tentruyen;
 	private String mota;

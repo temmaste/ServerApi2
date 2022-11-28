@@ -15,6 +15,8 @@ import com.model.Tacgia;
 
 @Path("/nguoidung")
 public class nguoidungService {
+	
+	//localhost:8080/undungdoctruyen/rest/nguoidung/dangnhap?username=thinhho&password=kakalok
 	@GET
 	@Path("/dangnhap")
 	@Produces({ MediaType.APPLICATION_JSON})

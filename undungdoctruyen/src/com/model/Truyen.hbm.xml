@@ -8,7 +8,7 @@
             <column name="matruyen" />
             <generator class="identity" />
         </id>
-        <many-to-one name="tacgia" class="com.model.Tacgia" fetch="select">
+        <many-to-one name="tacgia" class="com.model.Tacgia" lazy="false" fetch="select">
             <column name="matacgia" not-null="true" />
         </many-to-one>
         <property name="tentruyen" type="string">

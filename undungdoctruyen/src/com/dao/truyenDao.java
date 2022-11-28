@@ -11,7 +11,7 @@ import java.util.List;
 
 
 public class truyenDao {
-	public truyenDao() {};
+	
 	public List<Truyen>getAll(){
 		Session ses = SessionUtil.createFac().openSession();
 		Query query=ses.createQuery("From Truyen");

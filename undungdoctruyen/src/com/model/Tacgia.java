@@ -14,7 +14,7 @@ public class Tacgia implements java.io.Serializable {
 
 	private Integer matacgia;
 	private String tentacgia;
-	@JsonManagedReference
+	@JsonBackReference
 	private Set<Truyen> truyens = new HashSet<Truyen>(0);
 
 	public Tacgia() {
